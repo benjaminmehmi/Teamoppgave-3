@@ -1,0 +1,10 @@
+body {
+    background-image: url(IMG/Bakgrunn.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    height: 80vh;
+    width: 100vw;
+}
