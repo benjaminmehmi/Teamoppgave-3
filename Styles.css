@@ -1,0 +1,63 @@
+body {
+    background-image: url(IMG/Bakgrunn.jpg);
+    background-size: cover;
+    background-position: 0 0px; /* Adjust the vertical position */
+    background-repeat: repeat-x;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0px; /* Adjust the vertical position */
+    }
+    100% {
+        background-position: 100vw 0px; /* Adjust the vertical position */
+    }
+}
+
+.car1-image {
+    position: absolute;
+    top: 500px; /* Use vh units for vertical positioning */
+    right: -200px; /* Use vw units for horizontal positioning */
+    transform: translate(-50%, -50%) scaleX(-1); /* Flip the image horizontally */
+    max-width: 30%;
+    height: auto;
+}
+
+.upgrade-image {
+    position: absolute;
+    top: 75vh; /* Use vh units for vertical positioning */
+    left: 5vw; /* Use vw units for horizontal positioning */
+    transform: translate(-50%, -50%) scaleX(-1); /* Flip the image horizontally */
+    max-width: 30%;
+    height: auto;
+}
+
+@keyframes moveUpgrade {
+    0% {
+        background-position: 0 -120px; /* Adjust the vertical position */
+    }
+    100% {
+        background-position: 100vw -120px; /* Adjust the vertical position */
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .car1-image {
+        top: 50vh; /* Use vh units for vertical positioning */
+        right: -100px; /* Use vw units for horizontal positioning */
+        max-width: 50%;
+    }
+
+    .upgrade-image {
+        top: 75vh; /* Use vh units for vertical positioning */
+        left: 5vw; /* Use vw units for horizontal positioning */
+        max-width: 50%;
+    }
+    
+}
