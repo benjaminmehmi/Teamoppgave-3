@@ -2,15 +2,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const car = document.getElementById('car');
     const person = document.querySelector('.person');
     let carTop = car.offsetTop;
+<<<<<<< Updated upstream
     let canMove = true; // Flag to control movement
+=======
+>>>>>>> Stashed changes
 
     // Function to check for collisions
     function checkCollision() {
         if (isCollision(car, person)) {
             showCollisionDialog();
+<<<<<<< Updated upstream
             canMove = false; // Stop movement when a collision is detected
             car.classList.add('stop-animation'); // Stop car animation
             person.classList.add('stop-animation'); // Stop person animation
+=======
+>>>>>>> Stashed changes
         }
         requestAnimationFrame(checkCollision);
     }
@@ -19,8 +25,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     checkCollision();
 
     document.addEventListener('keydown', (event) => {
+<<<<<<< Updated upstream
         if (!canMove) return; // Prevent movement if canMove is false
 
+=======
+>>>>>>> Stashed changes
         const key = event.key;
 
         if (key === 'ArrowUp') {
@@ -61,6 +70,7 @@ function showCollisionDialog() {
     dialog.style.zIndex = '1000';
     dialog.innerText = 'Collision detected!';
 
+<<<<<<< Updated upstream
     const option1Button = document.createElement('button');
     option1Button.innerText = 'Option 1';
     option1Button.onclick = () => {
@@ -97,6 +107,21 @@ function showCollisionDialog() {
     document.body.appendChild(dialog);
 }
 
+=======
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Close';
+    closeButton.onclick = () => {
+        document.body.removeChild(dialog);
+    };
+
+    dialog.appendChild(closeButton);
+    document.body.appendChild(dialog);
+}
+
+
+
+
+>>>>>>> Stashed changes
 let progress = 0;
 
 function updateProgressBar() {
