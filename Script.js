@@ -2,11 +2,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const car = document.getElementById('car');
     const person = document.querySelector('.person');
     let carTop = car.offsetTop;
+    let canMove = true; // Flag to control movement
 
     // Function to check for collisions
     function checkCollision() {
         if (isCollision(car, person)) {
             showCollisionDialog();
+            canMove = false; // Stop movement when a collision is detected
+            car.classList.add('stop-animation'); // Stop car animation
+            person.classList.add('stop-animation'); // Stop person animation
         }
         requestAnimationFrame(checkCollision);
     }
@@ -15,6 +19,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     checkCollision();
 
     document.addEventListener('keydown', (event) => {
+        if (!canMove) return; // Prevent movement if canMove is false
+
         const key = event.key;
 
         if (key === 'ArrowUp') {
@@ -55,18 +61,41 @@ function showCollisionDialog() {
     dialog.style.zIndex = '1000';
     dialog.innerText = 'Collision detected!';
 
-    const closeButton = document.createElement('button');
-    closeButton.innerText = 'Close';
-    closeButton.onclick = () => {
+    const option1Button = document.createElement('button');
+    option1Button.innerText = 'Option 1';
+    option1Button.onclick = () => {
+        alert('Option 1 selected');
         document.body.removeChild(dialog);
+        canMove = true; // Allow movement after a dialog option is chosen
+        car.classList.remove('stop-animation'); // Resume car animation
+        person.classList.remove('stop-animation'); // Resume person animation
     };
 
-    dialog.appendChild(closeButton);
+    const option2Button = document.createElement('button');
+    option2Button.innerText = 'Option 2';
+    option2Button.onclick = () => {
+        alert('Option 2 selected');
+        document.body.removeChild(dialog);
+        canMove = true; // Allow movement after a dialog option is chosen
+        car.classList.remove('stop-animation'); // Resume car animation
+        person.classList.remove('stop-animation'); // Resume person animation
+    };
+
+    const option3Button = document.createElement('button');
+    option3Button.innerText = 'Option 3';
+    option3Button.onclick = () => {
+        alert('Option 3 selected');
+        document.body.removeChild(dialog);
+        canMove = true; // Allow movement after a dialog option is chosen
+        car.classList.remove('stop-animation'); // Resume car animation
+        person.classList.remove('stop-animation'); // Resume person animation
+    };
+
+    dialog.appendChild(option1Button);
+    dialog.appendChild(option2Button);
+    dialog.appendChild(option3Button);
     document.body.appendChild(dialog);
 }
-
-
-
 
 let progress = 0;
 

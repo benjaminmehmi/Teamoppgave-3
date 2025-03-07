@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 body {
     background-image: url(IMG/Bakgrunn.jpg);
     background-size: cover;
@@ -121,6 +119,20 @@ button {
     z-index: 10; /* Ensure the man appears above the road container */
 }
 
+@keyframes walk-right {
+    0% {
+        left: -30px;
+    }
+    100% {
+        left: calc(100% + 30px);
+    }
+}
+
+/* Add a class to stop the animation */
+.stop-animation {
+    animation-play-state: paused !important;
+}
+
 .dotted-line {
     position: absolute;
     width: 100%;
@@ -162,13 +174,3 @@ button {
     height: 4px;
     background-color: white;
 }
-
-@keyframes walk-right {
-    0% {
-        left: -30px;
-    }
-    100% {
-        left: calc(100% + 30px);
-    }
-}
->>>>>>> Stashed changes
